@@ -13,9 +13,11 @@
 		21473B5121516CA900B79188 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21473B4F21516CA900B79188 /* Main.storyboard */; };
 		21473B5321516CAA00B79188 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21473B5221516CAA00B79188 /* Assets.xcassets */; };
 		21473B5621516CAA00B79188 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21473B5421516CAA00B79188 /* LaunchScreen.storyboard */; };
+		A70C44E2A5D0898DC1A89012 /* Pods_ARDicee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158EEE4C44CDAC1F3B2AF366 /* Pods_ARDicee.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		158EEE4C44CDAC1F3B2AF366 /* Pods_ARDicee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARDicee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21473B4621516CA900B79188 /* ARDicee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARDicee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21473B4921516CA900B79188 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21473B4B21516CA900B79188 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		21473B5221516CAA00B79188 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21473B5521516CAA00B79188 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21473B5721516CAA00B79188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E899438FC4982ECC983CD0C /* Pods-ARDicee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARDicee.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARDicee/Pods-ARDicee.release.xcconfig"; sourceTree = "<group>"; };
+		4531B4AA01C12FDC42B2393E /* Pods-ARDicee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARDicee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARDicee/Pods-ARDicee.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70C44E2A5D0898DC1A89012 /* Pods_ARDicee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				21473B4821516CA900B79188 /* ARDicee */,
 				21473B4721516CA900B79188 /* Products */,
+				998DA47FBF8562840DDB5E91 /* Pods */,
+				ABDD17B3F479A3640AA26CFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = ARDicee;
 			sourceTree = "<group>";
 		};
+		998DA47FBF8562840DDB5E91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4531B4AA01C12FDC42B2393E /* Pods-ARDicee.debug.xcconfig */,
+				2E899438FC4982ECC983CD0C /* Pods-ARDicee.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ABDD17B3F479A3640AA26CFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				158EEE4C44CDAC1F3B2AF366 /* Pods_ARDicee.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +98,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21473B5A21516CAA00B79188 /* Build configuration list for PBXNativeTarget "ARDicee" */;
 			buildPhases = (
+				8E1C292624BA9B6891A407C1 /* [CP] Check Pods Manifest.lock */,
 				21473B4221516CA900B79188 /* Sources */,
 				21473B4321516CA900B79188 /* Frameworks */,
 				21473B4421516CA900B79188 /* Resources */,
@@ -133,6 +158,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E1C292624BA9B6891A407C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARDicee-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		21473B4221516CA900B79188 /* Sources */ = {
@@ -284,6 +330,7 @@
 		};
 		21473B5B21516CAA00B79188 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4531B4AA01C12FDC42B2393E /* Pods-ARDicee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +349,7 @@
 		};
 		21473B5C21516CAA00B79188 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E899438FC4982ECC983CD0C /* Pods-ARDicee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
