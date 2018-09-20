@@ -11,6 +11,8 @@ import SceneKit
 import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
+    
+    var diceArray: [SCNNode] = []
 
     @IBOutlet var sceneView: ARSCNView!
     
@@ -80,24 +82,46 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                         y: hitResult.worldTransform.columns.3.y + diceNode.boundingSphere.radius,
                         z: hitResult.worldTransform.columns.3.z)
                     
+                    diceArray.append(diceNode)
+                    
                     sceneView.scene.rootNode.addChildNode(diceNode)
                     
-                    let ninetyDegrees = Float.pi/2
-                    let randomX = Float(Int.random(in: 1...4)) * ninetyDegrees
-                    let randomZ = Float(Int.random(in: 1...4)) * ninetyDegrees
-                    let rotationMultiplier: Float = 3 // Using a rotationMultiplier guarantees the dice will roll at least these many times.
-                    
-                    diceNode.runAction(SCNAction.rotateBy(
-                        x: CGFloat(randomX * rotationMultiplier),
-                        y: 0,
-                        z: CGFloat(randomZ * rotationMultiplier),
-                        duration: 1)
-                    )
+                    roll(dice: diceNode)
                     
                 }
             
             }
         }
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        rollAll()
+    }
+    
+    @IBAction func rollAgain(_ sender: UIBarButtonItem) {
+        rollAll()
+    }
+    
+    func rollAll() {
+        if !diceArray.isEmpty {
+            for dice in diceArray {
+                roll(dice: dice)
+            }
+        }
+    }
+    
+    func roll(dice: SCNNode) {
+        let ninetyDegrees = Float.pi/2
+        let randomX = Float(Int.random(in: 1...4)) * ninetyDegrees
+        let randomZ = Float(Int.random(in: 1...4)) * ninetyDegrees
+        let rotationMultiplier: Float = 3 // Using a rotationMultiplier guarantees the dice will roll at least these many times.
+        
+        dice.runAction(SCNAction.rotateBy(
+            x: CGFloat(randomX * rotationMultiplier),
+            y: 0,
+            z: CGFloat(randomZ * rotationMultiplier),
+            duration: 1)
+        )
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
