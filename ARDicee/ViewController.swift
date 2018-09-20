@@ -81,6 +81,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                         z: hitResult.worldTransform.columns.3.z)
                     
                     sceneView.scene.rootNode.addChildNode(diceNode)
+                    
+                    let ninetyDegrees = Float.pi/2
+                    let randomX = Float(Int.random(in: 1...4)) * ninetyDegrees
+                    let randomZ = Float(Int.random(in: 1...4)) * ninetyDegrees
+                    let rotationMultiplier: Float = 3 // Using a rotationMultiplier guarantees the dice will roll at least these many times.
+                    
+                    diceNode.runAction(SCNAction.rotateBy(
+                        x: CGFloat(randomX * rotationMultiplier),
+                        y: 0,
+                        z: CGFloat(randomZ * rotationMultiplier),
+                        duration: 1)
+                    )
+                    
                 }
             
             }
